@@ -15,7 +15,7 @@ class Rational:
         return n
 
     def __init__(self,num,den=1):
-        if not isinstance(num,int) or not isinstance(den,int)
+        if not isinstance(num,int) or not isinstance(den,int)#所有输入的函数都要有判断类型，判空操作
             raise TypeError
         if den==0:
             raise ZeroDivisionError
@@ -27,5 +27,6 @@ class Rational:
         g=Rational._gcd(num,den)
         self.num=sign*(num//g)
         self.den=den//g
-
+e
     def __add__(self,anthoer):
+        
