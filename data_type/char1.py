@@ -15,4 +15,17 @@ class Rational:
         return n
 
     def __init__(self,num,den=1):
-        if not 
+        if not isinstance(num,int) or not isinstance(den,int)
+            raise TypeError
+        if den==0:
+            raise ZeroDivisionError
+        sign=1
+        if num <0:
+            num,sign=-num,-sign
+        if den<0:
+            den,sign=-den,-sign
+        g=Rational._gcd(num,den)
+        self.num=sign*(num//g)
+        self.den=den//g
+
+    def __add__(self,anthoer):
