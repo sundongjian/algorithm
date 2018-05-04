@@ -24,3 +24,6 @@ print(p1 < p2)
 print(Person.num())
 s1 = Student('程月', '女', (1995, 10, 10), '电气')
 print(s1.details())
+
+
+
