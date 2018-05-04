@@ -4,16 +4,18 @@
 类方法：cls作参数名，在类方法执行时，调用他的类将自动约束到方法的cls参数
 '''
 
+
 class Countable:
-    count=0
+    count = 0
 
     def __init__(self):
-        Countable.count+=1
+        Countable.count += 1
 
     @classmethod
     def get_count(self):
         return Countable.count
 
-'''
-功能是每次创建一个实例对象加一，易错点是有人用self.count,self代指实例，记录全局用类名字，最后直接用类调用Countable().get_count()'''
 
+'''
+功能是每次创建一个实例对象加一，易错点是有人用self.count,self代指实例，记录全局用类名字，最后直接用类调用Countable().get_count()
+'''
