@@ -93,3 +93,41 @@ class Person:
                          '姓名' + self._name,
                          '性别' + self._sex,
                          '出生日期' + str(self._birthday)))
+
+
+class Student(Person):
+    _id_num = 0
+
+    @classmethod
+    def _id_gen(cls):
+        cls._id_num += 1
+        year = datetime.date.today().year
+        return '1{:04}{:05}'.format(year, cls._id_num)
+
+    def __init__(self, name, sex, birthday, department):
+        # super().__init__(name, sex, birthday,Student._id_gen())
+        Person.__init__(self, name, sex, birthday, Student._id_gen())  # 可以看看两者区别,保持一致性，可以都用super
+        if not isinstance(department, str):
+            raise PersonValueError
+        self._enroll_date = datetime.date.today()
+        self._courses = {}
+        self._department = department
+
+    def set_course(self, course_name):
+        self._courses[course_name] = None
+
+    def set_score(self, course_name, score):
+        if course_name not in self._courses:
+            raise PersonValueError('NO THIS COURSE SELECTED')
+        if score not in range(0, 101):
+            raise PersonValueError('SCORE REEOR')
+        self._courses[course_name] = score
+
+    def scores(self):
+        return [(coursename, self._courses[coursename]) for coursename in self._courses]
+
+    def details(self):
+        return ','.join((Person.details(self),
+                         '入学日期' + str(self._enroll_date),
+                         '学院' + self._department,
+                         '课程记录' + str(self.scores())))
