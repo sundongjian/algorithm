@@ -18,7 +18,7 @@ ADT List:
 以下是单链表
 注意head永远存在，如果是空表，那么head=None，如果不是，那么就是第一个元素
 '''
-
+import copy
 #制作节点的类，节点的属性有当前节点元素和下一节点位置
 #单链表
 class LNode:
