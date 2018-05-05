@@ -17,7 +17,7 @@ class SStack:
         self._elems=[]
 
     def is_empty(self):
-        return self._elems is None
+        return self._elems==[]#之前写错成none
 
     def top(self):
         if self._elems==[]:
@@ -46,7 +46,7 @@ class LStack():
     def is_empty(self):
         return self._top is None
 
-    def prepend(self, elem):
+    def push(self, elem):
         self._top = LNode(elem, self._top)
 
     def pop(self):
