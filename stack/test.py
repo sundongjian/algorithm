@@ -24,13 +24,14 @@
 # print(norec_fact(10))
 
 from stack.char5 import SQueue
-sq=SQueue()
+
+sq = SQueue()
 print(sq.is_empty())
 
 sq.enqueue(4)
 print(sq.peek())
 sq.dequeue()
-for i in range(0,19):
+for i in range(0, 19):
     sq.enqueue(i)
-for i in range(0,19):
+for i in range(0, 19):
     print(sq.dequeue())
