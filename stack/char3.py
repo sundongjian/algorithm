@@ -40,6 +40,40 @@ def suf_exp_evaluator(exp):
 
 
 #中缀表达式到后缀表达式转换
+property={'(':1,'+':3,'-':3,'*':5,'/':5}
+infxi_operators='+-*/'
+
+def token(line):
+    pass
+
 def trans_infix_suffix(line):
     st=SStack()
     exp=[]
+
+    for x in tokens(line):
+        if x not in infxi_operators:
+            exp.append(x)
+        elif st.is_empty() or x='(':
+            st.push(x)
+        elif x==')':
+            while not st.is_empty() and st.pop() !='(':
+                st.push(x)
+            if st.is_empty():
+                raise ValueError
+            st.pop()
+        else:
+            while (not st.is_empty() and property[st.top()]>=property[x]):
+                exp.append(st.pop())
+            st.push(x)
+
+    while not st.is_empty():
+        if st.top()=='(':
+            raise ValueError
+        exp.append(st.pop())
+
+    return exp
+
+
+
+
+
