@@ -1,5 +1,6 @@
 from line_table.char1 import LList
-x=LList()
+
+x = LList()
 
 x.prepend(1)
 x.prepend(2)
