@@ -8,7 +8,7 @@ from binary_tree.framework.general import Simulation
 from stack.char5 import SQueue
 class Customs:
     def __init__(self,gate_num,duration,arrive_interval,check_interval):
-        self.simulation=Simulation()
+        self.simulation=Simulation(duration)
         self.waitline=SQueue()
 
         self.duration=duration

@@ -6,10 +6,10 @@ class Event:
     def __lt__(self, other_event):
         return self._ctime < other_event._ctime
 
-    def __le(self, other_event):
+    def __le__(self, other_event):
         return self._ctime <= other_event._ctime
 
-    def hout(self):
+    def host(self):
         return self._host
 
     def time(self):
