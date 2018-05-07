@@ -6,6 +6,7 @@
 #二叉树检索算法
 from binary_tree.char4 import   BinTNode
 from dic_set.char1 import ASSoc
+from stack.char1 import SStack
 
 
 def bt_search(btree,key):
@@ -64,4 +65,29 @@ class DictBinTree:
                 return
 
     def values(self):
+        t,s=self._root,SStack()
+        while t is not None or not s.is_empty():
+            while t is not None:
+                s.push(t)
+                t=t.left
+            t=s.pop()
+            yield t.data.value
+            t=t.rignt
+    '''
+    values如果返回一个键值对，就是Assoc对象，那么我们就可以修改这个键值对的对象属性，这是很危险的行为，修改后很可能导致
+    原来的二叉排序树被破坏，如果想要返回键值对，不能整个返回对象而是直接返回属性
+    '''
+
+    def entries(self):
+        t, s = self._root, SStack()
+        while t is not None or not s.is_empty():
+            while t is not None:
+                s.push(t)
+                t = t.left
+            t = s.pop()
+            yield t.data.key,t.data.value,
+            t = t.rignt
+
+    #删除太过于麻烦，有空再写
+    def delete(self):
         pass
