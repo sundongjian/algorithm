@@ -1,7 +1,8 @@
 '''
 模拟类，海关
-首先分析完成这种模拟所需要记录的各种信息，为了运行customs，需要一个实际驱动模拟的simulation的对象。由于车辆到达可能排队，还需要
-一个队列对象，记录正在排队的车辆。属性waitline的值是这个等待队列，几个检查通道是海关的内部资源，用gates表示各个通道的状态
+首先分析完成这种模拟所需要记录的各种信息，为了运行customs，需要一个实际驱动模拟的
+simulation的对象。由于车辆到达可能排队，还需要一个队列对象，记录正在排队的车辆。
+属性waitline的值是这个等待队列，几个检查通道是海关的内部资源，用gates表示各个通道的状态
 '''
 from binary_tree.case.event_case import Arrive
 from binary_tree.framework.general import Simulation

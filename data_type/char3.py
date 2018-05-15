@@ -106,7 +106,7 @@ class Student(Person):
 
     def __init__(self, name, sex, birthday, department):
         # super().__init__(name, sex, birthday,Student._id_gen())
-        Person.__init__(self, name, sex, birthday, Student._id_gen())  # 可以看看两者区别,保持一致性，可以都用super
+        Person.__init__(self, name, sex, birthday, Student._id_gen())
         if not isinstance(department, str):
             raise PersonValueError
         self._enroll_date = datetime.date.today()

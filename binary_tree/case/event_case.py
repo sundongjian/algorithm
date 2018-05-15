@@ -10,9 +10,10 @@ def event_log(time, name):
 
 class Arrive(Event):
     def __init__(self, arrive_time, customs):
-        Event.__init__(self, arrive_time, customs)  # 时间对象只有两个属性，到达时间和宿主系统，有用的只是到达时间
-        # 车先来先加入，后来后加入，放队列就行。但是事件时间不是这么规律，我们把事件放到二叉树之后每次都能抛出最早的时间，自动排序功能
-        customs.add_event(self)  # 疑惑为什么要加入二叉树，加到普通队列不行吗。
+        Event.__init__(self, arrive_time, customs)
+        # 车先来先加入，后来后加入，放队列就行。但是事件时间不是这么规律，
+        # 我们把事件放到二叉树之后每次都能抛出最早的时间，自动排序功能
+        customs.add_event(self)
 
     def run(self):
         time, customs = self.time(), self.host()
