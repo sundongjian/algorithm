@@ -4,10 +4,8 @@
 在一些事件的处理中可能会引发新的时间，将这些时间放入优先队列
 系统始终维持着一个当前时间，也就是正在发生哪个事件的时间
 '''
-
-from random import randint
 from binary_tree.char1 import PrioQueue
-from stack.char5 import SQueue
+
 
 
 class Simulation:

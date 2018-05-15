@@ -31,7 +31,6 @@ def gen_pnext(p):
             print('#',k,end=' ')
             k=pnext[k]#退到更短的相同前缀
             print(i,k)
-
     return pnext
 
 

@@ -1,5 +1,6 @@
-from binary_tree.framework.event_defi import Event
 from random import randint
+
+from binary_tree.framework.event_defi import Event
 from binary_tree.case.car_case import Car
 
 
